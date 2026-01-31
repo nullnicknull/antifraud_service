@@ -10,7 +10,7 @@ dependencies = [
     "prometheus-fastapi-instrumentator",
     "pydantic",
     "python-multipart",
-    "redis-py",
+    "redis>=7.1.0",
     "uvicorn",
 ]
 
