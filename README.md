@@ -41,23 +41,22 @@
 
 docker compose up --build
 
-Тестирование
-# Запуск тестов
+#Тестирование
+Запуск тестов
 uv run pytest tests/test_antifraud.py
 
-# С покрытием кода
-pytest --cov=app --cov-report=html tests/
-Запуск
-Из корня проекта выполните команду:
-bash
-docker compose up --build
+### Доступные адреса
 
-Доступные адреса
+Используйте следующие ссылки для доступа к интерфейсам сервисов:
 
-Swagger UI: http://localhost:8000/docs
-Метрики сервиса: http://localhost:8000/metrics
-Prometheus: http://localhost:9090
-Grafana: http://localhost:3000
-Данные для входа в Grafana:
-Логин: admin
-Пароль: admin
+*   **Swagger UI**: http://localhost:8000/docs
+*   **Метрики сервиса**: http://localhost:8000/metrics
+*   **Prometheus**: http://localhost:9090
+*   **Grafana**: http://localhost:3000
+
+#### Данные для входа в Grafana
+
+| Параметр | Значение |
+| :--- | :--- |
+| Логин | `admin` |
+| Пароль | `admin` |
