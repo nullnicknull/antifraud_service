@@ -1,0 +1,4 @@
+scrape_configs:
+  - job_name: 'fastapi-antifraud'
+    static_configs:
+      - targets: ['antifraud-api:8000'] 
