@@ -3,8 +3,8 @@ import redis.asyncio as redis
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from prometheus_fastapi_instrumentator import Instrumentator
-from app.routers import router
-from app.services import redis_client
+from app.src.routers import router
+from app.src.services import redis_client
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from app.models import AntifraudRequest, AntifraudResponse
-from app.services import check_antifraud
+from app.src.models import AntifraudRequest, AntifraudResponse
+from app.src.services import check_antifraud
 
 router = APIRouter()
 async def perform_antifraud_check(request: AntifraudRequest):

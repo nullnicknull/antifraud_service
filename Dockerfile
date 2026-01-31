@@ -2,6 +2,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+ENV PYTHONPATH=/app
+
 COPY pyproject.toml ./ 
 COPY app ./app 
 

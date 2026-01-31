@@ -1,7 +1,7 @@
 import json
 from datetime import date
 import redis.asyncio as redis
-from app.models import AntifraudRequest, AntifraudResponse
+from app.src.models import AntifraudRequest, AntifraudResponse
 
 redis_client: Optional[redis.Redis] = None
 
