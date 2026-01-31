@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  antifraud-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - redis
+    networks:
+      - antifraud-network
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    networks:
+      - antifraud-network
+
+  prometheus:
+    image: prom/prometheus
+    command: --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    depends_on:
+      - antifraud-api
+    networks:
+      - antifraud-network
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - antifraud-network
+
+networks:
+  antifraud-network:
+    driver: bridge
